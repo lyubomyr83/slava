@@ -8,6 +8,8 @@ class Auto
     public $model;
     public $name;
     public $speed;
+    public $type = "Автомобиль";
+    public static $col;
 
     public function __construct($c,$m,$n,$s)
     {
@@ -15,12 +17,14 @@ class Auto
         $this->model = $m;
         $this->name = $n;
         $this->speed = $s;
+        static::$col++;
 
         $this->getCar();
     }
 
     public function getCar()
     {
+        echo $this->type."<br>";
         echo "Марка автомобиля: ".$this->name;
         echo "<br>Модель: ".$this->model;
         echo "<br>Цвет: ".$this->color;

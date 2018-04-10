@@ -2,13 +2,12 @@
 namespace app\classes;
 
 
-class Mmenu
+class Mmenu extends Db1
 {
     public function prepareMenu()
     {
         $sql = "SELECT id, menu_name FROM pages";
-
-        $result = Db::getInstance()->sql($sql);
+        $result = $this->sql($sql);
 
         return $result;
     }

@@ -1,0 +1,20 @@
+#menu
+{
+    width: 200px;
+}
+
+#menu a
+{
+  display: block;
+    background-color: brown ;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#menu a:hover
+{
+
+    background-color: black ;
+
+}

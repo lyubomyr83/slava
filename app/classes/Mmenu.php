@@ -11,4 +11,12 @@ class Mmenu extends Db1
 
         return $result;
     }
+
+    public function prepareContent($id)
+    {
+        $sql = "SELECT content FROM pages WHERE id='$id'";
+        $result = $this->sql($sql);
+
+        return $result;
+    }
 }

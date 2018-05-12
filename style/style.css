@@ -1,18 +1,24 @@
-body,html
-{
-    padding: 0;
+html {
+    position: relative;
+    min-height: 100%;
     margin: 0;
+    padding: 0;
+    width: 99%;
 }
+
 
 body
 {
     background: url("../img/54.jpg");
     color: white;
+    margin-bottom: 60px;
+
 }
 
-ul
+#content
 {
-    list-style-type: none;
+    margin: 0;
+    padding: 10px;
 }
 
 #header
@@ -25,9 +31,11 @@ ul
     text-align: center;
 }
 
-#menu
+#menu ul
 {
-    width: 200px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 #menu a
@@ -38,13 +46,31 @@ ul
     padding: 10px;
     margin-bottom: 5px;
     text-decoration: none;
+    border-radius: 10px;
+
   }
 
 #menu a:hover
 {
 
-    background: url("../img/9.jpg");
-    padding-left: 30px;
-    margin-left: 30px;
+    background: url("../img/9.png");
+    padding-left: 40px;
+    margin-left: 40px;
+    color: black;
+    transition-duration: 1s;
+}
+
+#footer
+{
+    background: url("../img/9.png");
+    position: absolute;
+    bottom: 0;
+    width: 98%;
+    height: 60px;
+    text-align: center;
+    color: black;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding-top: 20px;
 
 }

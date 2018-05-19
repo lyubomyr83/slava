@@ -2,9 +2,9 @@
 require_once "header.php";
 require_once "config/ini.php";
 
-$connect_to_db = new app\classes\Db1();
 ?>
-<div id="content">
+
+<div id="container">
 
     <div id="header" class="row">
         <div class="col-md-2"><img src="img/microsoft-logo-4.png" width="200px"></div>

@@ -62,9 +62,12 @@ body
 .todayDate
 {
     background-color: #507299;
-    border-radius: 10px;
+    border-radius: 7px;
     text-align: right;
-
+    width: 20%;
+    margin-left: 80%;
+    padding-top: 10px;
+    height: 40px;
 }
 
 #footer {

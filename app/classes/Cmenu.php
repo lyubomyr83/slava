@@ -17,10 +17,5 @@ class Cmenu extends Mmenu
         return $menu;
     }
 
-    public function getContent($id)
-    {
-        $result = $this->prepareContent($id);
-        $content = mysqli_fetch_assoc($result);
-        return $content;
-    }
+
 }

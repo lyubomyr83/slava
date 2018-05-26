@@ -59,6 +59,14 @@ body
     transition-duration: 1s;
 }
 
+.todayDate
+{
+    background-color: #507299;
+    border-radius: 10px;
+    text-align: right;
+
+}
+
 #footer {
     position: absolute;
     bottom: 0;

@@ -1,16 +1,17 @@
 <?php
+
+
 namespace app\classes;
 
 
-class Mmenu
+class Mcontent
 {
-    public function prepareMenu()
+    public function prepareContent($id)
     {
-        $sql = "SELECT id, menu_name FROM pages";
+        $sql = "SELECT content FROM pages WHERE id='$id'";
+
 
         $result = Db::getInstance()->sql($sql);
         return $result;
     }
-
-
 }

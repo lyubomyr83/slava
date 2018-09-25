@@ -30,6 +30,16 @@ body
     text-align: center;
 }
 
+#page li
+{
+   list-style-type: none;
+}
+
+#page ul
+{
+    padding-left: 0;
+}
+
 #menu ul
 {
     list-style-type: none;

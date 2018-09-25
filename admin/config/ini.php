@@ -14,3 +14,6 @@ function __autoload($name)
 
 // библиотека функций
 require_once "../lib/functions.php";
+
+// создаём объекты
+$page = new \app\classes\Cpage();

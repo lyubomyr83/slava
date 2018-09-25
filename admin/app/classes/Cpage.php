@@ -20,7 +20,7 @@ class Cpage extends Mpage
     public function getPageForEdit($id)
     {
         $result = $this->preparePageForEdit($id);
-        $pages[] = mysqli_fetch_assoc($result);
+        $pages= mysqli_fetch_assoc($result);
 
         return $pages;
     }

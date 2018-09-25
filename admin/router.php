@@ -12,8 +12,21 @@ if($_GET)
                 require_once "views/VpageAdd.php";
                 break;
             case "edit":
-                require_once "views/VpageEdit.php";
+                if(!$_POST)
+                {
+                    require_once "views/VpageEdit.php";
+                }
+                else{
+                    if($page->EditPage($_GET['id'],$_POST))
+                    {
+                        echo "Данные были успешно обновлены";
+                    }
+
+                }
+
         }
+
+
     }
 
 

@@ -20,4 +20,24 @@ class Mpage
         $result = Db::getInstance()->sql($sql);
         return $result;
     }
+
+    public function EditPage($id,$post)
+    {
+        $sql = "UPDATE pages SET ";
+
+        foreach ($post as $column=>$value)
+        {
+            $sql .= $column." = '".$value."',";
+        }
+
+        $sql = substr($sql,0,-1);
+
+        $sql .= " WHERE id='{$id}'";
+        echo $sql;
+
+        //$result = Db::getInstance()->sql($sql);
+        //return $result;
+    }
+
+
 }

@@ -16,12 +16,9 @@ if($_GET)
                 {
                     require_once "views/VpageEdit.php";
                 }
-                else{
-                    if($page->EditPage($_GET['id'],$_POST))
-                    {
-                        echo "Данные были успешно обновлены";
-                    }
-
+                else
+                {
+                    $page->EditPage($_GET['id'],$_POST);
                 }
 
         }

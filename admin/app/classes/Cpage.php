@@ -19,4 +19,9 @@ class Cpage extends Mpage
 
         return $pages;
     }
+
+    public function prepareAddPage($post)
+    {
+        $this->AddPage($post);
+    }
 }

@@ -26,5 +26,8 @@ class Mpage
             Db::getInstance()->update("pages",$_POST,array('id'=>$id));
     }
 
-
+    public function AddPage($post)
+    {
+        Db::getInstance()->create("pages",$post);
+    }
 }

@@ -9,7 +9,15 @@ if($_GET)
                 require_once "views/VpageList.php";
                 break;
             case "page_add":
-                require_once "views/VpageAdd.php";
+
+                if(!$_POST)
+                {
+                    require_once "views/VpageAdd.php";
+                }
+                else
+                {
+                    $page->prepareAddPage($_POST);
+                }
                 break;
             case "edit":
                 if(!$_POST)
@@ -20,6 +28,7 @@ if($_GET)
                 {
                     $page->EditPage($_GET['id'],$_POST);
                 }
+                break;
 
         }
 

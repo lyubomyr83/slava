@@ -150,8 +150,24 @@ class Db extends Config
         }
     }
     //
-    public function delete()
+    public function delete($table, $where)
     {
+        $sql = "DELETE FROM {$table} WHERE id={$where}";
+
+        try
+        {
+            if($this->read($sql))
+            {
+                echo "Данные были успешно удалены";
+            }
+
+        }
+        catch(\PDOException $e)
+        {
+            echo "Извините, но операция не может быть выполнена";
+            // пишем все ошибки в файл с логами
+            file_put_contents('DBlogs.txt',$e->getMessage()."\n",FILE_APPEND);
+        }
 
     }
 }

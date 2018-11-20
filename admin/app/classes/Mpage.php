@@ -30,4 +30,9 @@ class Mpage
     {
         Db::getInstance()->create("pages",$post);
     }
+
+    public function DeletePage($id)
+    {
+        Db::getInstance()->delete("pages",$id);
+    }
 }

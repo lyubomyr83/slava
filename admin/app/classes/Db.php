@@ -60,12 +60,18 @@ class Db extends Config
 
     // CRUD methods
     //
-    public function create ($table, $data)
+    public function create ($table, $data, $timestamps=false)
     {
         $sql = "INSERT INTO {$table} (";
         foreach ($data as $k=>$v)
         {
             $sql.= "{$k}, ";
+        }
+
+        if ($timestamps)
+        {
+
+            $sql .= 'created, ';
         }
 
         $sql = substr($sql,0,-2);
@@ -75,6 +81,13 @@ class Db extends Config
         foreach ($data as $k=>$v)
         {
             $sql.= ":{$k}, ";
+        }
+
+        if ($timestamps)
+        {
+
+            $sql .= ':created, ';
+            $data['created'] = time();
         }
 
         $sql = substr($sql,0,-2);

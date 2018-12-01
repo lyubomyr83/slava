@@ -23,7 +23,7 @@ class Mpage
 
     public function EditPage($id,$post)
     {
-            Db::getInstance()->update("pages",$_POST,array('id'=>$id));
+            Db::getInstance()->update("pages",$_POST,array('id'=>$id), TRUE);
     }
 
     public function AddPage($post)

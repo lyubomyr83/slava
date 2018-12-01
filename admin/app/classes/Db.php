@@ -126,13 +126,28 @@ class Db extends Config
         }
         return $STH;
     }
-    //
-    public function update($table, $data, $where = NULL)
+
+    public function update($table, $data, $where = NULL, $timestamps=false)
     {
         $sql = "UPDATE {$table} SET ";
         foreach ($data as $k=>$v)
         {
             $sql.= "{$k}=:{$k}, ";
+        }
+
+        if ($timestamps)
+        {
+
+            $sql .= 'updated=:, ';
+        }
+
+        $sql = substr($sql,0,-2);
+
+        if ($timestamps)
+        {
+
+            $sql .= 'updated, ';
+            $data['updated'] = time();
         }
 
         $sql = substr($sql,0,-2);
@@ -146,6 +161,9 @@ class Db extends Config
 
             $sql = substr($sql,0,-3);
         }
+
+
+        echo $sql;
 
         try
         {

@@ -1,8 +1,8 @@
--- MySQL dump 10.16  Distrib 10.1.16-MariaDB, for Win32 (AMD64)
+-- MySQL dump 10.16  Distrib 10.1.30-MariaDB, for Win32 (AMD64)
 --
 -- Host: 127.0.0.1    Database: slava
 -- ------------------------------------------------------
--- Server version	10.1.16-MariaDB
+-- Server version	10.1.30-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -27,9 +27,9 @@ CREATE TABLE `pages` (
   `menu_name` varchar(255) NOT NULL,
   `content` text NOT NULL,
   `created` int(255) NOT NULL,
-  `update` int(255) DEFAULT NULL,
+  `updated` int(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `pages` (
 
 LOCK TABLES `pages` WRITE;
 /*!40000 ALTER TABLE `pages` DISABLE KEYS */;
-INSERT INTO `pages` VALUES (1,'Главная','Контент главной страницы',1543330191,NULL),(3,'Контакты','Контент контактов\r\n',1543330191,NULL),(4,'Фотогалерея','Фото',1543330191,NULL),(5,'Блог','список постов',1543330191,NULL),(6,'Новости','новости',1543330191,NULL),(12,'eee','eeee',1543330649,NULL);
+INSERT INTO `pages` VALUES (1,'Главная','Контент главной страницы',1543691983,NULL),(3,'Контакты\r\n','Контент контактов',1543691983,NULL),(4,'Фотогалерея','Фото',1543691983,1543693022),(5,'Блог','список постов',1543691983,NULL),(6,'Новости','новости',1543691983,NULL);
 /*!40000 ALTER TABLE `pages` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-27 17:59:17
+-- Dump completed on 2018-12-01 22:37:23

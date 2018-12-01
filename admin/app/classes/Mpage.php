@@ -7,7 +7,7 @@ class Mpage
 {
     public function preparePages()
     {
-        $sql = "SELECT id, menu_name FROM pages";
+        $sql = "SELECT id, menu_name, created FROM pages";
 
         $result = Db::getInstance()->read($sql);
         return $result;
@@ -28,6 +28,11 @@ class Mpage
 
     public function AddPage($post)
     {
-        Db::getInstance()->create("pages",$post);
+        Db::getInstance()->create("pages",$post, TRUE);
+    }
+
+    public function DeletePage($id)
+    {
+        Db::getInstance()->delete("pages",$id);
     }
 }

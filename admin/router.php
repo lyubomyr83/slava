@@ -29,7 +29,11 @@ if($_GET)
                     $page->EditPage($_GET['id'],$_POST);
                 }
                 break;
-
+            case "delete":
+                {
+                    $page->DeletePage($_GET['id']);
+                }
+                break;
         }
 
 

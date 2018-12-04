@@ -7,7 +7,7 @@ class Mpage
 {
     public function preparePages()
     {
-        $sql = "SELECT id, menu_name, created FROM pages";
+        $sql = "SELECT id, menu_name, created, updated FROM pages";
 
         $result = Db::getInstance()->read($sql);
         return $result;

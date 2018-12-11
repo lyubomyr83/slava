@@ -80,6 +80,53 @@ body
     height: 40px;
 }
 
+.pageListHeader
+{
+    background-color: darkblue;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.pageListRow
+{
+    background-color: darkgray;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 2px;
+    text-align: center;
+}
+
+.pageListRowPageName a
+{
+    color: #ffffff;
+    width: 150px;
+    text-align: center;
+
+}
+
+.pageListRowPageDelete
+{
+    text-align: center;
+}
+
+.pageListRowPageDelete button
+{
+    border-radius: 50%;
+    padding: 10px;
+}
+
+
+
+.pageListRowPageDelete button a
+{
+    text-align: center;
+}
+
+
 #footer {
     position: absolute;
     bottom: 0;

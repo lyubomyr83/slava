@@ -14,8 +14,8 @@ foreach ($pageslist as $value)
     ?>
     <div id='page' class="row pageListRow">
         <div class="col-md-2 pageListRowPageName"><a class="btn btn-success" href="index.php?page=edit&id=<?=$value['id']?>"><?=$value['menu_name']?></a></div>
-        <div class="col-md-2 pageListRowPageDelete"><button type="button" class="btn btn-warning"><a href="index.php?page=edit&id=<?=$value['id']?>"><img src="../img/r.png" title="Редактировать"></a></button></div>
-        <div class="col-md-2 pageListRowPageDelete"><button type="button" class="btn btn-danger"><a href="index.php?page=delete&id=<?=$value['id']?>"><span class="glyphicon glyphicon-trash" title="Удалить"></span></a></button></div>
+        <div class="col-md-2 pageListRowPageDelete"><a class="btn btn-warning" href="index.php?page=edit&id=<?=$value['id']?>"><img src="../img/r.png" title="Редактировать"></a></button></div>
+        <div class="col-md-2 pageListRowPageDelete"><a class="btn btn-danger"  href="index.php?page=delete&id=<?=$value['id']?>"><img src="../img/u.png" title="Удалить"></span></a></button></div>
         <div class="col-md-2"><?php echo date("d.m.Y \в H:i:s",$value['created']);?></div>
         <div class="col-md-2">
         <?php

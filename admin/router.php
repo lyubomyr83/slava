@@ -1,10 +1,19 @@
 <?php
+if (!$_SESSION['loged'])
+{
+    header("refresh: 3600; url=index.php?page=authorization");
+}
+
 if($_GET)
 {
     if($_GET['page'])
     {
         switch ($_GET['page'])
         {
+
+            case "authorization":
+                require_once "views/Vauthorization.php";
+                break;
             case "page_list":
                 require_once "views/VpageList.php";
                 break;

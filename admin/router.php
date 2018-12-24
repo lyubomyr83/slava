@@ -1,19 +1,13 @@
 <?php
 if (!$_SESSION['loged'])
 {
-    header("refresh: 3600; url=index.php?page=authorization");
+    header("refresh:0; url=authorization.php");
 }
 
-if($_GET)
-{
     if($_GET['page'])
     {
         switch ($_GET['page'])
         {
-
-            case "authorization":
-                require_once "views/Vauthorization.php";
-                break;
             case "page_list":
                 require_once "views/VpageList.php";
                 break;
@@ -49,4 +43,3 @@ if($_GET)
     }
 
 
-}

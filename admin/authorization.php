@@ -29,6 +29,6 @@ if
     $_POST ['login']== 1 &
     $_POST ['password']== 1
 )
-    $_SESSION['login'];
+    echo "<a href = \"index.php\" title=\"На сайт\">На сайт</a>";
 else
     echo "Ошибка! Данные введены некоректно.";

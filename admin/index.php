@@ -15,7 +15,15 @@ require_once "config/ini.php";
     </div>
 
     <div class="row">
-        <div class="col-md-2"><?php require_once "views/Vmenu.php";?></div>
+        <div class="col-md-2">
+            <?php
+            if ($_SESSION['loged'])
+            {
+               require_once "views/Vmenu.php";
+            }
+
+            ?>
+        </div>
         <div class="col-md-10">
             <?php require_once "router.php";?>
         </div>

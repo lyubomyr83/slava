@@ -1,7 +1,7 @@
 <?php
 if (!$_SESSION['loged'])
 {
-    header("refresh:0; url=authorization.php");
+    require_once "views/Vauthorization.php";
 }
 
     if($_GET['page'])
@@ -39,7 +39,19 @@ if (!$_SESSION['loged'])
                 break;
         }
 
-
     }
+
+    if($_POST)
+    {
+        if($_GET['page']=='authorization')
+        {
+            echo 111;
+            $authorization = new \app\classes\Сauthorization();
+            $authorization->go();
+        }
+    }
+
+
+
 
 

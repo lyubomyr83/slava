@@ -3,6 +3,10 @@ namespace app\classes;
 
 class Cpage extends Mpage
 {
+    public function __construct()
+    {
+        echo "CPage";
+    }
 
     public function getPages()
     {

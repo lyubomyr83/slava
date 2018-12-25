@@ -1,14 +1,6 @@
 <?php
 namespace app\classes;
 
-/**
- * @filename DB.php
- * набор компонентов для работы с БД (PDO Singleton)
- * @author Любомир Пона
- * @copyright 24.09.2013
- * @updated 29.09.2018
- */
-
 class Db extends Config
 {
     private static $instance = null; // объект для работы с БД

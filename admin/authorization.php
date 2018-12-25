@@ -26,9 +26,9 @@ require_once "header.php";
 <?
 if
 (
-    $_POST ['login']=="admin" &
-    $_POST ['password']=="12345"
+    $_POST ['login']== 1 &
+    $_POST ['password']== 1
 )
-    $_SESSION['login'] = 'admin';
+    $_SESSION['login'];
 else
     echo "Ошибка! Данные введены некоректно.";

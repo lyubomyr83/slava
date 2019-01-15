@@ -44,7 +44,7 @@ class Db extends Config
     {
         echo "Извините, но операция подключения к БД не может быть выполнена";
         // пишем все ошибки в файл с логами
-        file_put_contents('DBlogs.txt',$e->getMessage()."\n",FILE_APPEND);
+        file_put_contents('logs/Dblogs.txt',$e->getMessage()."\n",FILE_APPEND);
     }
 
     }
@@ -98,7 +98,7 @@ class Db extends Config
         {
             echo "Извините, но операция не может быть выполнена";
             // пишем все ошибки в файл с логами
-            file_put_contents('DBlogs.txt',$e->getMessage()."\n",FILE_APPEND);
+            file_put_contents('logs/Dblogs.txt',$e->getMessage()."\n",FILE_APPEND);
         }
     }
     //
@@ -166,7 +166,7 @@ class Db extends Config
         {
             echo "Извините, но операция не может быть выполнена";
             // пишем все ошибки в файл с логами
-            file_put_contents('DBlogs.txt',$e->getMessage()."\n",FILE_APPEND);
+            file_put_contents('logs/Dblogs.txt',$e->getMessage()."\n",FILE_APPEND);
         }
     }
     //
@@ -186,7 +186,7 @@ class Db extends Config
         {
             echo "Извините, но операция не может быть выполнена";
             // пишем все ошибки в файл с логами
-            file_put_contents('DBlogs.txt',$e->getMessage()."\n",FILE_APPEND);
+            file_put_contents('logs/Dblogs.txt',$e->getMessage()."\n",FILE_APPEND);
         }
 
     }

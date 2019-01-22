@@ -13,7 +13,7 @@ class Cauthorization extends Mauthorization
 {
     public function __construct($name,$surname)
     {
-        echo "ooookkkk!!!";
+        echo "ooookkkk!!! ";
         echo $name." ".$surname;
     }
 }

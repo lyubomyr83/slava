@@ -24,14 +24,6 @@ class Factory
         // Пробуем создать объект
         try
         {
-            // Если класс не существует, то
-            if (!class_exists($class_full_name))
-            {
-                // генерируем исключение
-                throw new \Exception("Invalid class name");
-            }
-            else
-            {
                 if ($singleton)
                 {
                     // По принципу Singleton с доп. функциями
@@ -58,13 +50,13 @@ class Factory
                         return new $class_full_name();
                     }
                 }
-            }
+
         }
         // Пытаемся поймать исключение
         catch (\Exception $exception)
         {
-            $error = date("j.m.Y \a\\t G:i:s") . "\n".$exception->getMessage() . "\n\n";
-            file_put_contents('logs/Factory_log.txt', $error,FILE_APPEND);
+            $error = date("j.m.Y \a\\t G:i:s")."\n".$exception->getMessage()."\n\n";
+            file_put_contents('logs/log.txt', $error,FILE_APPEND);
         }
     }
 }

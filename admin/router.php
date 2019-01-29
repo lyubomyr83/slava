@@ -3,6 +3,10 @@ if (!$_SESSION['loged'])
 {
     require_once "views/Vauthorization.php";
 }
+else
+{
+    echo $_SESSION['loged'];
+}
 
     if($_GET['page'])
     {
@@ -43,11 +47,13 @@ if (!$_SESSION['loged'])
 
     if($_POST)
     {
+
         if($_GET['page']=='authorization')
         {
-            $authorization = new \app\classes\Сauthorization();
-            $authorization->go();
+
+            $authorization->getUser($_POST);
         }
+
     }
 
 

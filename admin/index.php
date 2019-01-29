@@ -1,8 +1,8 @@
 <?php
 namespace app\classes;
+session_start();
 require_once "header.php";
 require_once "config/ini.php";
-
 ?>
 
 <div id="container">
@@ -11,15 +11,14 @@ require_once "config/ini.php";
         <div class="col-md-2"><img src="../img/microsoft-logo-4.png" width="200px"></div>
         <div class="col-md-10"><h1>Система Администрирования</h1></div>
         <div class="todayDate">
-        <?php  echo "Сегодня ".receiveDayOfWeek()." ".date(' d ')." ".receiveMonth()." ".date( 'Y')." года. <br> <br>"; ?>
+        <?php
+         echo "Сегодня ".receiveDayOfWeek()." ".date(' d ')." ".receiveMonth()." ".date( 'Y')." года. <br> <br>";?>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-2">
             <?php
-            Db::getInstance();
-            $test = Factory::getClassInst('Test');
 
             if ($_SESSION['loged'])
             {

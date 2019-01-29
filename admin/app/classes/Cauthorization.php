@@ -1,18 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: NUC2
- * Date: 15.01.2019
- * Time: 17:14
- */
-
 namespace app\classes;
-
 
 class Cauthorization extends Mauthorization
 {
-    public function __construct()
+    public function getUser($user)
     {
+        $result = $this->getLogin($user);
+
+        $db_user = $result->fetch();
+
+        $_SESSION['loged'] = $db_user['name'];
 
     }
+
 }

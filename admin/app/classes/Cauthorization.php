@@ -11,9 +11,8 @@ namespace app\classes;
 
 class Cauthorization extends Mauthorization
 {
-    public function __construct($name,$surname)
+    public function __construct()
     {
-        echo "ooookkkk!!! ";
-        echo $name." ".$surname;
+
     }
 }

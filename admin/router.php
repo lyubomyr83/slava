@@ -45,7 +45,6 @@ if (!$_SESSION['loged'])
     {
         if($_GET['page']=='authorization')
         {
-            echo 111;
             $authorization = new \app\classes\Сauthorization();
             $authorization->go();
         }

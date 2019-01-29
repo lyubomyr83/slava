@@ -57,6 +57,6 @@ class Factory
         {
             $error = date("j.m.Y \a\\t G:i:s")."\n".$exception->getMessage()."\n\n";
             file_put_contents('logs/log.txt', $error,FILE_APPEND);
-        }
-    }
+}
+}
 }

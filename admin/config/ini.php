@@ -18,4 +18,4 @@ require_once "../lib/functions.php";
 
 // создаём объекты
 $page = Factory::getClassInst("Cpage");
-$authorization = Factory::getClassInst("Cauthorization",0,["Вася","Пупкин"]);
+$authorization = Factory::getClassInst("Cauthorization",0);

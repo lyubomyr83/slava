@@ -1,13 +1,23 @@
 <?php
 if (!$_SESSION['loged'])
 {
-    require_once "views/Vauthorization.php";
+
+
+    if($_POST)
+    {
+        if($_GET['page']=='authorization')
+        {
+
+            $authorization->getUser($_POST);
+        }
+    }
+    else
+    {
+        require_once "views/Vauthorization.php";
+    }
 }
 else
 {
-    echo $_SESSION['loged'];
-}
-
     if($_GET['page'])
     {
         switch ($_GET['page'])
@@ -41,20 +51,21 @@ else
                     $page->DeletePage($_GET['id']);
                 }
                 break;
+            case "logout":
+                {
+                    unset($_SESSION['loged']);
+                    header('Refresh: 0; URL=index.php');
+
+                }
+                break;
         }
 
     }
+}
 
-    if($_POST)
-    {
 
-        if($_GET['page']=='authorization')
-        {
 
-            $authorization->getUser($_POST);
-        }
 
-    }
 
 
 

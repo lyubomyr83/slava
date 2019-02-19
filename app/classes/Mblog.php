@@ -1,16 +1,15 @@
 <?php
+
 namespace app\classes;
 
 
-class Mmenu
+class Mblog
 {
-    public function prepareMenu()
+    public function prepareBlog()
     {
-        $sql = "SELECT id, menu_name,blog FROM pages";
-
+        $sql = "SELECT * FROM blog";
         $result = Db::getInstance()->read($sql);
         return $result;
     }
-
 
 }

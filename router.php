@@ -12,15 +12,27 @@ if($_GET)
         echo $content_for_page['content'];
         if ($content_for_page['blog']==1)
         {
-           echo "Это блог";
            $post = Factory::getClassInst("Cblog");
            $posts = $post->getBlog();
-           echo "<PRE>";
-                var_export($posts);
-            echo "</PRE>";
 
+           foreach ($posts as $post_item )
+           {
+            ?>
+                <div class="row">
+                    <div class="col-md-4"><img src="img/<?=$post_item['image'] ?>"></div>
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-12"><h2><?=$post_item['post_header']?></h2></div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-12"><?=$post_item['post_content'] ?></div>
+                        </div>
+                    </div>
+                </div>
+
+            <?php
+           }
         }
-
-
     }
 }

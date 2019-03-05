@@ -1,4 +1,4 @@
-html {
+html, body{
     position: relative;
     min-height: 100%;
     margin: 0;
@@ -118,6 +118,33 @@ body
   margin-top: 20%;
   margin-left:30%;
 
+}
+
+.news
+{
+    margin-bottom: 2%;
+    margin-left: 0;
+    background-color: white;
+    color: black;
+    padding-left: 0;
+}
+
+.img_news_title
+{
+    margin: 0px;
+    padding: 0px;
+    background-color: red;
+}
+
+.news_title_content
+{
+    text-align: justify;
+}
+
+.news_title_content a
+{
+    display: block;
+    background-color: gray;
 }
 
 #footer {

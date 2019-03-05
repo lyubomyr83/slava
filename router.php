@@ -18,15 +18,18 @@ if($_GET)
            foreach ($posts as $post_item )
            {
             ?>
-                <div class="row">
-                    <div class="col-md-4"><img src="img/<?=$post_item['image'] ?>"></div>
+                <div class="row news">
+                    <div class="col-md-4"><img class="img_news_title" src="img/<?=$post_item['image'] ?>"></div>
                     <div class="col-md-8">
                         <div class="row">
                             <div class="col-md-12"><h2><?=$post_item['post_header']?></h2></div>
                         </div>
-                        <div class="row">
-
-                            <div class="col-md-12"><?=$post_item['post_content'] ?></div>
+                        <div class="row news_title_content">
+                            <?php
+                            $content = substr($post_item['post_content'],0,1000);
+                            ?>
+                            <div class="col-md-12"><?=$content."..."?></div>
+                            <a href="#">Читать далее</a>
                         </div>
                     </div>
                 </div>

@@ -27,9 +27,12 @@ if($_GET)
                         <div class="row news_title_content">
                             <?php
                             $content = substr($post_item['post_content'],0,1000);
+                            $content = trim_to_dot($content);
                             ?>
-                            <div class="col-md-12"><?=$content."..."?></div>
-                            <a href="#">Читать далее</a>
+                            <div class="col-md-12"><?=$content?></div>
+                        </div>
+                        <div class="row next">
+                            <div class="col-md-12"><a href="#">Далее</a></div>
                         </div>
                     </div>
                 </div>

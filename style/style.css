@@ -39,6 +39,12 @@ body
     padding-left: 0;
 }
 
+#menu
+{
+    position: fixed;
+width: 15%;
+}
+
 #menu ul
 {
     list-style-type: none;
@@ -121,14 +127,19 @@ body
 
 .news
 {
-    margin-bottom: 2%;
-    margin-left: 0;
+    margin: 0;
+    padding: 0;
     background-color: white;
     color: black;
-    padding-left: 0;
+    margin-bottom: 2%;
 }
 
-.img_news_title
+.news_content
+{
+    padding: 0% 4%;
+}
+
+.news_img
 {
     margin: 0px;
     padding: 0px;
@@ -140,6 +151,7 @@ body
     text-align: justify;
 }
 
+
 .next a
 {
     display: block;
@@ -149,8 +161,10 @@ body
     width: 8%;
     text-align: center;
     text-decoration: none;
-    position: absolute;
+    position: fixed;
+    bottom: 0;
 }
+
 
 .next a:hover
 {

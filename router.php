@@ -19,8 +19,8 @@ if($_GET)
            {
             ?>
                 <div class="row news">
-                    <div class="col-md-4"><img class="img_news_title" src="img/<?=$post_item['image'] ?>"></div>
-                    <div class="col-md-8">
+                    <div class="col-md-3 news_img"><img src="img/<?=$post_item['image'] ?>"></div>
+                    <div class="col-md-9 news_content">
                         <div class="row">
                             <div class="col-md-12"><h2><?=$post_item['post_header']?></h2></div>
                         </div>

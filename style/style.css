@@ -161,8 +161,6 @@ width: 15%;
     width: 8%;
     text-align: center;
     text-decoration: none;
-    position: fixed;
-    bottom: 0;
 }
 
 
@@ -172,8 +170,7 @@ width: 15%;
 }
 
 #footer {
-    position: absolute;
-    bottom: 0;
+    position: fixed;
     width: 99%;
     height: 60px;
     background: url("../img/9.png");
@@ -184,5 +181,6 @@ width: 15%;
     margin-bottom: 10px;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%)
+    transform: translate(-50%);
+    bottom: 0;
 }

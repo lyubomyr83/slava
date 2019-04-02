@@ -18,24 +18,21 @@ if($_GET)
            foreach ($posts as $post_item )
            {
             ?>
-                <div class="row news">
-                    <div class="col-md-3 news_img"><img src="img/<?=$post_item['image'] ?>"></div>
-                    <div class="col-md-9 news_content">
-                        <div class="row">
-                            <div class="col-md-12"><h2><?=$post_item['post_header']?></h2></div>
-                        </div>
-                        <div class="row news_title_content">
-                            <?php
-                            $content = substr($post_item['post_content'],0,1000);
-                            $content = trim_to_dot($content);
-                            ?>
-                            <div class="col-md-12"><?=$content?></div>
-                        </div>
-                        <div class="row next">
-                            <div class="col-md-12"><a href="#">Далее</a></div>
-                        </div>
-                    </div>
+            <div id="news" class="row">
+                <div class="col-md-3 column"><img src='img/<?=$post_item['image']?>'></div>
+                <div class="col-md-9 content next">
+                    <h2><?=$post_item['post_header']?></h2>
+                    <?php
+                        $content = substr($post_item['post_content'],0,1000);
+                        $content = trim_to_dot($content);
+                    ?>
+                    <?=$content?>
+                    <a href="?news=#">далее</a>
+                    <span class="glyphicon glyphicon-user"></span>
+                    <span class="glyphicon glyphicon-time"></span>
+
                 </div>
+            </div>
 
             <?php
            }

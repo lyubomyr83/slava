@@ -41,8 +41,7 @@ body
 
 #menu
 {
-position: fixed;
-width: 15%;
+    width: 65%;
 }
 
 #menu ul
@@ -136,8 +135,13 @@ width: 15%;
 
 #news .content
 {
-    padding: 0 50px;
+    margin: 10px 0;
     height: 100%;
+}
+
+#news .glyphicon
+{
+    margin-left: 70px;
 }
 
 #news .column
@@ -154,7 +158,7 @@ width: 15%;
     margin: auto;
     overflow: hidden;
     position: absolute;
-    bottom: -90%;
+    /*bottom: -90%;*/
 }
 
 #footer {

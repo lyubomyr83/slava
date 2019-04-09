@@ -27,9 +27,11 @@ if($_GET)
                         $content = trim_to_dot($content);
                     ?>
                     <?=$content?>
-                    <a href="?news=#">далее</a>
-                    <span class="glyphicon glyphicon-user"></span>
-                    <span class="glyphicon glyphicon-time"></span>
+                    <div class="row">
+                        <div class="col-md-4 content"><a href="?news=#">далее</a></div>
+                        <div class="col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-user"> <?=$post_item['author'] ?></span><span class="glyphicon glyphicon-time"> <?=date("d.m.Y",$post_item['created_at'] )?></span></div>
+                    </div>
+
 
                 </div>
             </div>

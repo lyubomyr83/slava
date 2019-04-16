@@ -1,5 +1,5 @@
 <?php
-if (!$_SESSION['loged'])
+if (!$_SESSION['loges'])
 {
     require_once "views/Vauthorization.php";
 }
@@ -45,7 +45,7 @@ if (!$_SESSION['loged'])
     {
         if($_GET['page']=='authorization')
         {
-            $authorization = new \app\classes\Сauthorization();
+            $authorization = new app\classes\Cauthorization($_POST);
         }
     }
 

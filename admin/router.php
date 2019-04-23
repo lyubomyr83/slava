@@ -1,5 +1,5 @@
 <?php
-if (!$_SESSION['loges'])
+if (!$_SESSION['loged'])
 {
     require_once "views/Vauthorization.php";
 }
@@ -37,6 +37,10 @@ if (!$_SESSION['loges'])
                     $page->DeletePage($_GET['id']);
                 }
                 break;
+            case "exit":
+                {
+                    unset($_SESSION['loged']);
+                }
         }
 
     }

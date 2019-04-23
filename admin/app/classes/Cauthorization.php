@@ -9,12 +9,9 @@ class Cauthorization extends Mauthorization
         $result = $this->select_user($user);
 
         $loged = $result->fetch();
-
         if (!empty($loged))
         {
-            $_SESSION['loges'] = $loged['name'];
+            $_SESSION['loged'] = $loged['name'];
         }
-
-
     }
 }

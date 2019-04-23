@@ -1,5 +1,5 @@
 <?php
-namespace app\classes;
+session_start();
 require_once "header.php";
 require_once "config/ini.php";
 
@@ -16,11 +16,8 @@ require_once "config/ini.php";
     </div>
 
     <div class="row">
-        <div class="col-md-2">
-            <?php
-            Db::getInstance();
-            $test = Factory::getClassInst('Test');
-
+        <div class="col-md-2"><?php
+            app\classes\Db::getInstance();
             if ($_SESSION['loged'])
             {
                require_once "views/Vmenu.php";

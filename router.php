@@ -1,6 +1,8 @@
 <?php
 use app\classes\Factory;
 
+/* @var $post \app\classes\Cblog */
+
 if($_GET)
 {
     if($_GET['page'])
@@ -13,7 +15,7 @@ if($_GET)
         if ($content_for_page['blog']==1)
         {
            $post = Factory::getClassInst("Cblog");
-           $posts = $post->getBlog();
+           $posts = $post->getBlog($_GET['page']);
 
            foreach ($posts as $post_item )
            {

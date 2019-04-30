@@ -12,6 +12,7 @@ class Cauthorization extends Mauthorization
         if (!empty($loged))
         {
             $_SESSION['loged'] = $loged['name'];
+            header('Refresh: 0; URL=index.php');
         }
     }
 }

@@ -16,7 +16,7 @@ require_once "config/ini.php";
     </div>
 
     <div class="row">
-        <div class="col-md-2"><?php
+        <div class="col-md-3"><?php
             app\classes\Db::getInstance();
             if ($_SESSION['loged'])
             {
@@ -25,7 +25,7 @@ require_once "config/ini.php";
 
             ?>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-9">
             <?php require_once "router.php";?>
         </div>
     </div>

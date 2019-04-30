@@ -1,9 +1,23 @@
 <?php
+/* @var $page \app\classes\Cpage*/
+// если пользователь не авторизован
 if (!$_SESSION['loged'])
 {
-    require_once "views/Vauthorization.php";
-}
+    if($_POST)
+    {
+        if($_GET['page']=='authorization')
+        {
+            $authorization = new app\classes\Cauthorization($_POST);
+        }
+    }
+    else
+    {
+        require_once "views/Vauthorization.php";
+    }
 
+}
+else
+{
     if($_GET['page'])
     {
         switch ($_GET['page'])
@@ -33,25 +47,26 @@ if (!$_SESSION['loged'])
                 }
                 break;
             case "delete":
-                {
-                    $page->DeletePage($_GET['id']);
-                }
+                $page->DeletePage($_GET['id']);
+                break;
+            case "blog_list":
+                require_once "views/VblogList.php";
+                break;
+            case "blog_add":
+                require_once 'views/VblogAdd.php';
                 break;
             case "exit":
-                {
-                    unset($_SESSION['loged']);
-                }
+                unset($_SESSION['loged']);
+                header('Refresh: 0; URL=index.php');
+                break;
         }
 
     }
+}
 
-    if($_POST)
-    {
-        if($_GET['page']=='authorization')
-        {
-            $authorization = new app\classes\Cauthorization($_POST);
-        }
-    }
+
+
+
 
 
 

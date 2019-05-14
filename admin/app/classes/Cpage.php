@@ -12,6 +12,13 @@ class Cpage extends Mpage
         return $pages;
     }
 
+    public function getPageName($id)
+    {
+        $result = $this->preparePageName($id);
+        $page= $result->fetch();
+
+        return $page;
+    }
 
     public function getPageForEdit($id)
     {

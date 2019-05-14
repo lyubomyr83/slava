@@ -18,3 +18,4 @@ require_once "../lib/functions.php";
 
 // создаём объекты
 $page = Factory::getClassInst("Cpage");
+$blog = Factory::getClassInst("Cblog");

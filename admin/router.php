@@ -55,6 +55,16 @@ else
             case "blog_add":
                 require_once 'views/VblogAdd.php';
                 break;
+            case "blog_edit":
+                if(!$_POST)
+                {
+                    require_once "views/VblogEdit.php";
+                }
+                else
+                {
+
+                }
+                break;
             case "exit":
                 unset($_SESSION['loged']);
                 header('Refresh: 0; URL=index.php');

@@ -13,6 +13,14 @@ class Mpage
         return $result;
     }
 
+    public function preparePageName($id)
+    {
+        $sql = "SELECT menu_name FROM pages WHERE id='{$id}'";
+
+        $result = Db::getInstance()->read($sql);
+        return $result;
+    }
+
     public function preparePageForEdit($id)
     {
         $sql = "SELECT menu_name, content FROM pages WHERE id='{$id}'";

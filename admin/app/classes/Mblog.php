@@ -12,4 +12,26 @@ class Mblog
         return $result;
     }
 
+    public function preparePagesList()
+    {
+        $sql = "SELECT id,menu_name FROM pages WHERE blog='1'";
+        $result = Db::getInstance()->read($sql);
+        return $result;
+    }
+
+    public function prepareCategorylist()
+    {
+        $sql = "SELECT * FROM categories";
+        $result = Db::getInstance()->read($sql);
+        return $result;
+    }
+
+    public function prepareBlogItemForEdit($id)
+    {
+        $sql = "SELECT post_header, post_content, tags, category, image, author, page_id FROM blog WHERE id='{$id}'";
+
+        $result = Db::getInstance()->read($sql);
+        return $result;
+    }
+
 }

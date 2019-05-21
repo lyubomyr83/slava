@@ -12,15 +12,28 @@ class Cblog extends Mblog
         return $blog;
     }
 
-
-   /* public function getPageForEdit($id)
+    public function getPagesList()
     {
-        $result = $this->preparePageForEdit($id);
-        $pages= $result->fetch();
-
+        $result = $this->preparePagesList();
+        $pages = $result->fetchAll();
         return $pages;
     }
 
+    public function getCategoryList()
+    {
+        $result = $this->prepareCategorylist();
+        $categories = $result->fetchAll();
+        return $categories;
+    }
+
+    public function getBlogItemForEdit($id)
+    {
+        $result = $this->prepareBlogItemForEdit($id);
+        $item= $result->fetch();
+
+        return $item;
+    }
+/*
     public function prepareAddPage($post)
     {
         $this->AddPage($post);

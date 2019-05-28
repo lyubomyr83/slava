@@ -23,7 +23,7 @@ class Mpage
 
     public function preparePageForEdit($id)
     {
-        $sql = "SELECT menu_name, content FROM pages WHERE id='{$id}'";
+        $sql = "SELECT menu_name, content, blog FROM pages WHERE id='{$id}'";
 
         $result = Db::getInstance()->read($sql);
         return $result;
@@ -31,7 +31,14 @@ class Mpage
 
     public function EditPage($id,$post)
     {
-            Db::getInstance()->update("pages",$_POST,array('id'=>$id), TRUE);
+
+
+        if (!$post['blog'])
+        {
+            $post['blog'] = 0;
+        }
+
+        Db::getInstance()->update("pages",$post,array('id'=>$id), TRUE);
     }
 
     public function AddPage($post)

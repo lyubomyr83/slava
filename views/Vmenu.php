@@ -8,7 +8,6 @@ echo "<div id='menu'>";
     echo "<ul>";
     foreach ($menu as $value)
     {
-        $blog = ($value['blog']);
         echo "<li><a href=\"index.php?page={$value['id']}\">".$value['menu_name'].$blog."</a></li>";
     }
 

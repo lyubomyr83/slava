@@ -143,7 +143,6 @@ class Db extends Config
         }
 
         $sql = substr($sql,0,-2);
-
         if($where)
         {
             foreach ($where as $col=>$value)

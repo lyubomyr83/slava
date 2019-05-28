@@ -26,7 +26,6 @@ else
                 require_once "views/VpageList.php";
                 break;
             case "page_add":
-
                 if(!$_POST)
                 {
                     require_once "views/VpageAdd.php";
@@ -36,6 +35,7 @@ else
                     $page->prepareAddPage($_POST);
                 }
                 break;
+            // редактирование страницы
             case "edit":
                 if(!$_POST)
                 {

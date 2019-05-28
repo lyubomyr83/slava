@@ -46,9 +46,12 @@ $categories = $blog->getCategoryList();
         <div class="col-md-4">
             <select>
                 <?php
+
+
                 foreach ($pages as $page)
                 {
-                    echo "<option value=\"{$page['id']}\">{$page['menu_name']}</option>";
+                    $selected = ($item['page_id']==$page['id'])?"selected":"";
+                    echo "<option value=\"{$page['id']}\" $selected>{$page['menu_name']}</option>";
                 }
 
                 ?>

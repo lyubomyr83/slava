@@ -12,7 +12,8 @@ $edit = $page->getPageForEdit($_GET['id']);
 </div>
     <div class="row">
         <div class="col-md-2">Блог</div>
-        <div class="col-md-4"><input type="checkbox" name="blog" value="1"></div>
+        <div class="col-md-4"><input type="checkbox" name="blog" value="1" <?php if($edit['blog']){echo "checked";}?>>
+        </div>
     </div>
 <div class="row">
     <div class="col-md-2"></div>

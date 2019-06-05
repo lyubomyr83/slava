@@ -37,7 +37,7 @@ $categories = $blog->getCategoryList();
                 {
                     foreach ($cat as $item_category_id)
                     {
-                        if ($item_category_id == $category)
+                        if ($item_category_id == $category['id'])
                         {
                             echo "<option value=\"{$category['id']}\" selected>{$category['name']}</option>";
                         }

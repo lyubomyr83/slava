@@ -33,9 +33,10 @@ class Cblog extends Mblog
 
         return $item;
     }
-/*
-    public function prepareAddPage($post)
+
+    public function prepareEditBlogItem($post)
     {
-        $this->AddPage($post);
-    }*/
+        $post['category'] = serialize($post['category']);
+        $this->EditBlogItem($post);
+    }
 }

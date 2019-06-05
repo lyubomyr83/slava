@@ -153,6 +153,8 @@ class Db extends Config
             $sql = substr($sql,0,-3);
         }
 
+        echo $sql;
+
         try
         {
             if($this->read($sql, $data))

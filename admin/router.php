@@ -62,7 +62,7 @@ else
                 }
                 else
                 {
-
+                    $blog->prepareEditBlogItem($_POST);
                 }
                 break;
             case "exit":

@@ -28,10 +28,15 @@ class Mblog
 
     public function prepareBlogItemForEdit($id)
     {
-        $sql = "SELECT post_header, post_content, tags, category, image, author, page_id FROM blog WHERE id='{$id}'";
+        $sql = "SELECT id,post_header, post_content, tags, category, image, author, page_id FROM blog WHERE id='{$id}'";
 
         $result = Db::getInstance()->read($sql);
         return $result;
+    }
+
+    public function EditBlogItem($post)
+    {
+        Db::getInstance()->update("blog",$post,['id'=>$post['id']],true);
     }
 
 }

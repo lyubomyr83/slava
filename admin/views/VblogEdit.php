@@ -37,6 +37,7 @@ $pages = $blog->getPagesList();
                 {
                         foreach ($cat as $item_category_id)
                         {
+                            //
                             $selected = ($item_category_id == $category['id'])?"selected":"hidden";
                             echo "<option value=\"{$category['id']}\" {$selected}>{$category['name']}</option>";
 

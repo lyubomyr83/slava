@@ -1,11 +1,11 @@
 <?php
 $item = $blog->getBlogItemForEdit($_GET['id']);
+// массив с номерами категорий страницы блога
 $cat= unserialize($item['category']);
-
-var_dump($cat);
-
-$pages = $blog->getPagesList();
 $categories = $blog->getCategoryList();
+$pages = $blog->getPagesList();
+
+
 ?>
 <form method="post">
     <input type="hidden" name="id" value="<?=$item['id']?>">
@@ -35,17 +35,14 @@ $categories = $blog->getCategoryList();
                 <?php
                 foreach ($categories as $category)
                 {
-                    foreach ($cat as $item_category_id)
-                    {
-                        if ($item_category_id == $category['id'])
+                        foreach ($cat as $item_category_id)
                         {
-                            echo "<option value=\"{$category['id']}\" selected>{$category['name']}</option>";
+                            $selected = ($item_category_id == $category['id'])?"selected":"hidden";
+                            echo "<option value=\"{$category['id']}\" {$selected}>{$category['name']}</option>";
+
                         }
-                        else
-                        {
-                            echo "<option value=\"{$category['id']}\">{$category['name']}</option>";
-                        }
-                    }
+
+
 
                 }
 

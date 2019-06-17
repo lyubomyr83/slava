@@ -31,24 +31,19 @@ $pages = $blog->getPagesList();
     <div class="row">
         <div class="col-md-2">Категории</div>
         <div class="col-md-4">
-         <select size="2" multiple name="category[]">
+        <select size="2" multiple name="category[]">
                 <?php
                 foreach ($categories as $category)
-                {
-                        foreach ($cat as $item_category_id)
-                        {
-                            //
-                            $selected = ($item_category_id == $category['id'])?"selected":"hidden";
-                            echo "<option value=\"{$category['id']}\" {$selected}>{$category['name']}</option>";
+                    {
+                        echo   "<option value=\"{$category['id']}\">{$category['name']}</option>";
+                    }
 
-                        }
-
-
-
-                }
-
+/*                foreach ($cat as $item_category_id)
+                    {
+                        echo  str_replace("<option value=\"{$item_category_id['id']}\">{$category['name']}</option>", "<option value=\"{$item_category_id['id']}\" selected>{$category['name']}</option>" ) ;
+                    }*/
                 ?>
-            </select>
+        </select>
         </div>
     </div>
     <div class="row">

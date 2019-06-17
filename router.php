@@ -25,7 +25,7 @@ if($_GET)
                 <div class="col-md-9 content next">
                     <h2><?=$post_item['post_header']?></h2>
                     <?php
-                        $content = substr($post_item['post_content'],0,1000);
+                        $content = substr($post_item['post_content'],0,2000);
                         $content = trim_to_dot($content);
                     ?>
                     <?=$content?>

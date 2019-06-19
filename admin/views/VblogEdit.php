@@ -1,7 +1,14 @@
 <?php
+ /**
+  * @var $item \app\classes\Cblog
+  * @var $blog \app\classes\Cblog
+  */
+
+
 $item = $blog->getBlogItemForEdit($_GET['id']);
 // массив с номерами категорий страницы блога
 $cat= unserialize($item['category']);
+var_dump($cat);
 $categories = $blog->getCategoryList();
 $pages = $blog->getPagesList();
 
@@ -33,21 +40,21 @@ $pages = $blog->getPagesList();
         <div class="col-md-4">
         <select size="3" multiple name="category[]">
                 <?php
-                $full = '';
+                $all_categories = '';
                 foreach ($categories as $category)
                     {
-                        $last= "<option value=\"{$category['id']}\">{$category['name']}</option>";
-                        $full .= $last;
+                        $new_one= "<option value=\"{$category['id']}\">{$category['name']}</option>\n\t\t\t";
+                        $all_categories .= $new_one;
 
                     }
 
                 foreach ($cat as $item_category_id)
                     {
-                        $x = str_replace( "value=\"{$item_category_id['id']}\"", "value=\"{$item_category_id['id']}\" selected", $full);
-                        $full=$x;
+                        $replace = str_replace( "value=\"{$item_category_id['id']}\"", "value=\"{$item_category_id['id']}\" selected", $all_categories);
+                        $all_categories=$replace;
                     }
 
-                echo $full;
+                echo $all_categories;
                 ?>
         </select>
         </div>

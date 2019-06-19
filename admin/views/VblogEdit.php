@@ -36,14 +36,15 @@ $pages = $blog->getPagesList();
                 $full = '';
                 foreach ($categories as $category)
                     {
-                        $last= "<option value=\"{$category['id']}\">{$category['name']}</option>";
+                        $last= "option value=\"{$category['id']}\">{$category['name']}</option>";
                         $full .= $last;
-                        $x = '';
-                        foreach ($cat as $item_category_id)
-                        {
-                            $x .= str_replace( "value=\"{$item_category_id['id']}\"", "value=\"{$item_category_id['id']}\" selected", $full);
-                        }
 
+                    }
+
+                $x = '';
+                foreach ($cat as $item_category_id)
+                    {
+                        $x .= str_replace( "value=\"{$item_category_id['id']}\"", "value=\"{$item_category_id['id']}\" selected", $full);
                     }
 
                 echo $x;

@@ -10,4 +10,11 @@ class Cblog extends Mblog
         $all_posts = $blog->fetchAll();
         return $all_posts;
     }
+
+    public function getCategoryList()
+    {
+        $result = $this->prepareCategorylist();
+        $categories = $result->fetchAll();
+        return $categories;
+    }
 }

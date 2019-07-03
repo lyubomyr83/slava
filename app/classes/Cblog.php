@@ -4,10 +4,23 @@ namespace app\classes;
 
 class Cblog extends Mblog
 {
-    public function getBlog($page_id)
+    public function getBlog($page_id, $categories=null)
     {
-        $blog = $this->prepareBlog($page_id);
-        $all_posts = $blog->fetchAll();
+
+        if($categories)
+        {
+            var_dump($blog = $this->prepareBlog($page_id, $categories));
+            foreach ($blog as $items)
+            {
+                $all_posts [] = $items->fetchAll();
+            }
+        }
+        else
+        {
+            $blog = $this->prepareBlog($page_id);
+            $all_posts = $blog->fetchAll();
+        }
+
         return $all_posts;
     }
 

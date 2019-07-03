@@ -4,7 +4,7 @@
         <?php
         foreach ($categories as $category)
         {
-            echo "<li><input type='checkbox' name='name' value='1'> {$category['name']}</li>";
+            echo "<li><input type='checkbox' name='category_name[]' value='{$category['id']}'> {$category['name']}</li>";
         }
         ?>
         <li><input type="submit" value="Применить"></li>

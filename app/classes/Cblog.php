@@ -9,10 +9,12 @@ class Cblog extends Mblog
 
         if($categories)
         {
-            var_dump($blog = $this->prepareBlog($page_id, $categories));
+            $blog = $this->prepareBlog($page_id, $categories);
+
             foreach ($blog as $items)
             {
                 $all_posts [] = $items->fetchAll();
+
             }
         }
         else

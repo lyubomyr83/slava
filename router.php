@@ -18,7 +18,7 @@ if($_GET)
 
 
            $posts = $post->getBlog($_GET['page'],$_POST);
-           var_dump($posts);
+
            $categories = $post->getCategoryList();
            ?>
            <div id="blog" class="row">
@@ -34,6 +34,7 @@ if($_GET)
                         }
                         else
                         {
+                            $post_item = $post_items;
                             require_once "views/Vblog.php";
                         }
 

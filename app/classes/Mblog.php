@@ -22,8 +22,6 @@ class Mblog
             $sql = "SELECT * FROM blog WHERE page_id='{$page_id}'";
             $result = Db::getInstance()->read($sql);
         }
-
-
         return $result;
     }
     public function prepareCategorylist()

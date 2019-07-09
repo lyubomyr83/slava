@@ -6,24 +6,16 @@ class Cblog extends Mblog
 {
     public function getBlog($page_id, $categories=null)
     {
-
-        if($categories)
-        {
-            $blog = $this->prepareBlog($page_id, $categories);
-
-            foreach ($blog as $items)
+        if ($categories)
             {
-                $all_posts [] = $items->fetchAll();
-
+                $blog = $this->prepareBlog($page_id, $categories);
             }
-        }
         else
-        {
-            $blog = $this->prepareBlog($page_id);
-            $all_posts = $blog->fetchAll();
-        }
-
-        return $all_posts;
+            {
+                $blog = $this->prepareBlog($page_id);
+            }
+        $result = $blog->fetchAll();
+        return $result;
     }
 
     public function getCategoryList()

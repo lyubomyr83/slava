@@ -9,20 +9,18 @@ class Mblog
         if ($categories)
         {
             foreach ($categories as $category)
-            {
-                foreach ($category as $category_id)
                 {
-                    $sql = "SELECT * FROM blog WHERE page_id='{$page_id}' AND category='{$category_id}'";
-                    $result[] = Db::getInstance()->read($sql);
+                    $sql = "SELECT * FROM blog WHERE page_id='{$page_id}' AND category='{$category}' ";
+                    $result = Db::getInstance()->read($sql);
+                    return $result;
                 }
-            }
         }
         else
-        {
-            $sql = "SELECT * FROM blog WHERE page_id='{$page_id}'";
-            $result = Db::getInstance()->read($sql);
-        }
-        return $result;
+            {
+                $sql = "SELECT * FROM blog WHERE page_id='{$page_id}'";
+                $result = Db::getInstance()->read($sql);
+                return $result;
+            }
     }
     public function prepareCategorylist()
     {

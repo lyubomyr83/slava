@@ -17,27 +17,14 @@ if($_GET)
            $post = Factory::getClassInst("Cblog");
 
 
-           $posts = $post->getBlog($_GET['page'],$_POST);
-
+           $posts = $post->getBlog($_GET['page'],$_POST['category_name']);
            $categories = $post->getCategoryList();
            ?>
            <div id="blog" class="row">
                <div class="col-md-10 column"><?php
-                    foreach ($posts as $post_items )
+                    foreach ($posts as $post_item )
                     {
-                        if (is_array($post_items))
-                        {
-                            foreach ($post_items as $post_item)
-                            {
-                                require_once "views/Vblog.php";
-                            }
-                        }
-                        else
-                        {
-                            $post_item = $post_items;
                             require_once "views/Vblog.php";
-                        }
-
                     }
                ?>
                </div>

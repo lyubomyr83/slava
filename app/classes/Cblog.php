@@ -24,11 +24,12 @@ class Cblog extends Mblog
                             // смотрим список всех выбранных пользователем категорий
                             foreach ($categories as $category)
                             {
-                                 if (array_search($category,$ct_unserialized))
+                                 $x = array_search($category,$ct_unserialized);
+                                 if ($x)
                                  {
 
                                          $blog_items[] = $item;
-                                         echo "ok";
+
 
                                  }
                             }

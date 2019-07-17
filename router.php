@@ -18,21 +18,11 @@ if($_GET)
 
 
            $posts = $post->getBlog($_GET['page'],$_POST['category_name']);
+
            $categories = $post->getCategoryList();
-           ?>
-           <div id="blog" class="row">
-               <div class="col-md-10 column"><?php
-                    foreach ($posts as $post_item )
-                    {
-                            require_once "views/Vblog.php";
-                    }
-               ?>
-               </div>
-               <div class="col-md-2 category">
-                    <?php require_once "views/Vcategories.php";?>
-               </div>
-           </div>
-           <?php
+
+           require_once "views/Vblog.php";
+
         }
     }
 }

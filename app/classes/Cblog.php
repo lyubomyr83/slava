@@ -7,8 +7,11 @@ class Cblog extends Mblog
     public function getBlog($page_id, $categories=null)
     {
 
+
         $blog = $this->prepareBlog($page_id);
         $result = $blog->fetchAll();
+
+            // если выбраны конкретные категории
             if ($categories)
             {
                 foreach ($result as $item)
@@ -18,19 +21,15 @@ class Cblog extends Mblog
                         if ($k == 'category')
                         {
                             $ct_unserialized = unserialize($v);
+                            // смотрим список всех выбранных пользователем категорий
                             foreach ($categories as $category)
                             {
                                  if (array_search($category,$ct_unserialized))
                                  {
-                                     $ct = serialize($ct_unserialized);
-                                     if (array_search($ct,$item))
-                                     {
-                                         echo "<PRE>";
-                                         var_dump($item);
-                                         echo "</PRE>";
-                                         $blog_items[] = $item;
 
-                                     }
+                                         $blog_items[] = $item;
+                                         echo "ok";
+
                                  }
                             }
                         }
@@ -42,7 +41,9 @@ class Cblog extends Mblog
                 $blog_items = $result;
             }
 
-
+/*        echo "???<PRE>";
+        var_dump($blog_items);
+        echo "???</PRE>";*/
         return $blog_items;
     }
 

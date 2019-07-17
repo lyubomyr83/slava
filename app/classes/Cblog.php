@@ -6,42 +6,41 @@ class Cblog extends Mblog
 {
     public function getBlog($page_id, $categories=null)
     {
-        echo "<PRE>";
-        var_dump($categories);
-        echo "</PRE>";
+
         $blog = $this->prepareBlog($page_id);
         $result = $blog->fetchAll();
-
-        if ($categories)
-        {
-            foreach ($result as $item)
+            if ($categories)
             {
-                foreach ($item as $k=>$v)
+                foreach ($result as $item)
                 {
-                    if ($k == 'category')
+                    foreach ($item as $k=>$v)
                     {
-                        $ct_unserialized = unserialize($v);
-                        foreach ($ct_unserialized as $ct_id)
+                        if ($k == 'category')
                         {
-                            if (array_search('{$ct_id}',$categories))
+                            $ct_unserialized = unserialize($v);
+                            foreach ($categories as $category)
                             {
-                                // если десерелизованная категория есть в POST со списком выбранных категорий
+                                 if (array_search($category,$ct_unserialized))
+                                 {
+                                     $ct = serialize($ct_unserialized);
+                                     if (array_search($ct,$item))
+                                     {
+                                         echo "<PRE>";
+                                         var_dump($item);
+                                         echo "</PRE>";
+                                         $blog_items[] = $item;
 
+                                     }
+                                 }
                             }
                         }
                     }
                 }
             }
-
-
-            foreach ($result['category'])
-
-
-        }
-        else
-        {
-
-        }
+            else
+            {
+                $blog_items = $result;
+            }
 
 
         return $blog_items;

@@ -1,2 +1,3 @@
  https://ilyakhasanov.ru/baza-znanij/grafika-i-tekst/besshovnye-fony
  http://bootstrap-ru.com/303/css/#grid
+ http://www.webengineer.pro/php-scripts/8-array-search-i-nyuans-proverki-rezultata-vozvrashchaemogo-etoj-funktsiej

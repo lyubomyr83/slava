@@ -13,10 +13,10 @@ class Mblog
 
             foreach ($category as $one_category)
             {
-                $sql .= "'%:\"{$one_category}\";%' OR category LIKE ";
+                $sql .= "'%:\"{$one_category}\";%' AND category LIKE ";
 
             }
-            $sql = substr($sql,0,-17);
+            $sql = substr($sql,0,-19);
         }
         echo $sql;
         $result = Db::getInstance()->read($sql);

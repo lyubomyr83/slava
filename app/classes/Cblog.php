@@ -24,12 +24,14 @@ class Cblog extends Mblog
                             // смотрим список всех выбранных пользователем категорий
                             foreach ($categories as $category)
                             {
-                                 $x = array_search($category,$ct_unserialized);
-                                 if ($x)
+                                //сравнивает запрошенные категории с категориями к которым принадлежит статья блога
+                                 $find = array_search($category,$ct_unserialized);
+                                 if ($find)
                                  {
-
-                                         $blog_items[] = $item;
-
+                                     $blog_items[] = $item;
+                                     //попытка провести обычный запрос, чтобы вывести статью с одной категорией
+                                     $blog_cat = $this->prepareBlog($page_id, $category);
+                                     echo $blog_cat->fetchAll();
 
                                  }
                             }
@@ -42,9 +44,6 @@ class Cblog extends Mblog
                 $blog_items = $result;
             }
 
-/*        echo "???<PRE>";
-        var_dump($blog_items);
-        echo "???</PRE>";*/
         return $blog_items;
     }
 

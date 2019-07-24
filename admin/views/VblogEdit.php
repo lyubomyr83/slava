@@ -8,7 +8,6 @@
 $item = $blog->getBlogItemForEdit($_GET['id']);
 // массив с номерами категорий страницы блога
 $cat= unserialize($item['category']);
-var_dump($cat);
 $categories = $blog->getCategoryList();
 $pages = $blog->getPagesList();
 
@@ -61,7 +60,7 @@ $pages = $blog->getPagesList();
     </div>
     <div class="row">
         <div class="col-md-2">Изображение</div>
-        <div class="col-md-4"><></div>
+        <div class="col-md-4"><img src="../img/<?=$item['image']?>" width="200px"></div>
     </div>
     <div class="row">
         <div class="col-md-2">Принадлежит странице</div>

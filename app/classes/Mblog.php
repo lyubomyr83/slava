@@ -9,9 +9,16 @@ class Mblog
         $sql = "SELECT * FROM blog WHERE page_id='{$page_id}'";
         if ($category)
         {
-            $sql .= " AND category='a:1:{i:0;s:1:\"'{$category}'\";}'";
+            $sql .=  " AND category LIKE ";
 
+            foreach ($category as $one_category)
+            {
+                $sql .= "'%:\"{$one_category}\";%' OR category LIKE ";
+
+            }
+            $sql = substr($sql,0,-17);
         }
+        echo $sql;
         $result = Db::getInstance()->read($sql);
         return $result;
     }

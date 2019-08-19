@@ -17,7 +17,7 @@ $pages = $blog->getPagesList();
     <input type="hidden" name="id" value="<?=$item['id']?>">
     <div class="row">
         <div class="col-md-2">Название статьи</div>
-        <div class="col-md-4"><input type="text" name="post_header" value="<?=$item['post_header']?>"></div>
+        <div class="col-md-4"><input type="text" class="blogEditTitle" name="post_header" value="<?=$item['post_header']?>"></div>
     </div>
     <div class="row">
         <div class="col-md-2">Контент</div>
@@ -25,10 +25,24 @@ $pages = $blog->getPagesList();
     </div>
     <div class="row">
         <div class="col-md-2">Тэги</div>
-        <div class="col-md-4">Выбор нескольких значений с помощью клавиши ctrl<br>
+        <div class="col-md-4">
          <select>
                 <?php
+                $all_tags = '';
+                foreach ($item as $tag)
+                {
+                    $new_tag= "<option value=\"{$tag['tags']}\" title='Выбор нескольких значений с помощью клавиши ctrl'>{$tag['tags']}</option>";
+                    $all_tags .= $new_tag;
 
+                }
+
+                foreach ($cat as $item_category_id)
+                {
+                    $replace = str_replace( "value=\"{$tag['tags']}\"", "value=\"{$tag['tags']}\" selected", $all_tags);
+                    $all_tags=$replace;
+                }
+
+                echo $all_tags;
 
                 ?>
             </select>
@@ -42,7 +56,7 @@ $pages = $blog->getPagesList();
                 $all_categories = '';
                 foreach ($categories as $category)
                     {
-                        $new_one= "<option value=\"{$category['id']}\">{$category['name']}</option>\n\t\t\t";
+                        $new_one= "<option value=\"{$category['id']}\" title='Выбор нескольких значений с помощью клавиши ctrl'>{$category['name']}</option>\n\t\t\t";
                         $all_categories .= $new_one;
 
                     }
@@ -60,15 +74,13 @@ $pages = $blog->getPagesList();
     </div>
     <div class="row">
         <div class="col-md-2">Изображение</div>
-        <div class="col-md-4"><img src="../img/<?=$item['image']?>" width="200px"></div>
+        <div class="col-md-4"><img src="../img/<?=$item['image']?>" width="200px" title="Это изображение отображается на сайте сейчас"><input type="file"></div>
     </div>
     <div class="row">
         <div class="col-md-2">Принадлежит странице</div>
         <div class="col-md-4">
             <select>
                 <?php
-
-
                 foreach ($pages as $page)
                 {
                     $selected = ($item['page_id']==$page['id'])?"selected":"";

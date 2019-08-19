@@ -4,7 +4,7 @@
         {?>
 
             <div id="news" class="row">
-                <div class="col-md-4 column"><img src='img/<?=$post_item['image']?>'></div>
+                <div class="col-md-4 column"><img src='img/<?=$post_item['image']?>' width="400px"></div>
                 <div class="col-md-8 content next">
                     <h2><?=$post_item['post_header']?></h2>
                     <?php

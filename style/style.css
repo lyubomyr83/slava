@@ -8,7 +8,7 @@ html{
 
 body
 {
-    background-color: #F5FFFA;
+    background-image: url("../img/9.png") ;
     color: #505050;
     margin-bottom: 60px;
 
@@ -66,7 +66,7 @@ body
 #menu a:hover
 {
 
-    background-color: white;
+    background-color: lightgray;
     margin-right: 50px;
     color: #505050;;
     transition-duration: 1s;

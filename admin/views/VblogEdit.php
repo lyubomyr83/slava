@@ -11,7 +11,6 @@ $cat= unserialize($item['category']);
 $categories = $blog->getCategoryList();
 $pages = $blog->getPagesList();
 
-
 ?>
 <form method="post">
     <input type="hidden" name="id" value="<?=$item['id']?>">
@@ -26,26 +25,7 @@ $pages = $blog->getPagesList();
     <div class="row">
         <div class="col-md-2">Тэги</div>
         <div class="col-md-4">
-         <select>
-                <?php
-                $all_tags = '';
-                foreach ($item as $tag)
-                {
-                    $new_tag= "<option value=\"{$tag['tags']}\" title='Выбор нескольких значений с помощью клавиши ctrl'>{$tag['tags']}</option>";
-                    $all_tags .= $new_tag;
-
-                }
-
-                foreach ($cat as $item_category_id)
-                {
-                    $replace = str_replace( "value=\"{$tag['tags']}\"", "value=\"{$tag['tags']}\" selected", $all_tags);
-                    $all_tags=$replace;
-                }
-
-                echo $all_tags;
-
-                ?>
-            </select>
+            <input type="text" class="blogEditTitle" name="tags" value="<?=$item['tags']?>" title="Тэги разделять запятой">
         </div>
     </div>
     <div class="row">

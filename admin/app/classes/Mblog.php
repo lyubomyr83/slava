@@ -39,4 +39,13 @@ class Mblog
         Db::getInstance()->update("blog",$post,['id'=>$post['id']],true);
     }
 
+    public function updateTags($tags)
+    {
+        foreach ($tags as $tag)
+            {
+                $sql = "INSERT INTO tags (tag) VALUES ('{$tag}')";
+                Db::getInstance()->read($sql);
+            }
+    }
+
 }

@@ -39,4 +39,11 @@ class Cblog extends Mblog
         $post['category'] = serialize($post['category']);
         $this->EditBlogItem($post);
     }
+
+    public function prepareUpdateTags ($tags)
+    {
+        $arrayTags = explode (",", $tags);
+        $this->updateTags($arrayTags);
+    }
+
 }

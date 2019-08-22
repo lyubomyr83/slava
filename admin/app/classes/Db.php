@@ -137,7 +137,6 @@ class Db extends Config
 
         if ($timestamps)
         {
-
             $sql .= 'updated, ';
             $data['updated'] = time();
         }
@@ -153,13 +152,12 @@ class Db extends Config
             $sql = substr($sql,0,-3);
         }
 
-        echo $sql;
-
         try
         {
             if($this->read($sql, $data))
             {
                 echo "Данные были успешно обновлены";
+
             }
 
         }

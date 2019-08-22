@@ -63,6 +63,7 @@ else
                 else
                 {
                     $blog->prepareEditBlogItem($_POST);
+                    $blog->prepareUpdateTags($_POST['tags']);
                 }
                 break;
             case "exit":

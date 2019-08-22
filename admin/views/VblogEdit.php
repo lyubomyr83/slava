@@ -4,7 +4,6 @@
   * @var $blog \app\classes\Cblog
   */
 
-
 $item = $blog->getBlogItemForEdit($_GET['id']);
 // массив с номерами категорий страницы блога
 $cat= unserialize($item['category']);
@@ -38,15 +37,12 @@ $pages = $blog->getPagesList();
                     {
                         $new_one= "<option value=\"{$category['id']}\" title='Выбор нескольких значений с помощью клавиши ctrl'>{$category['name']}</option>\n\t\t\t";
                         $all_categories .= $new_one;
-
                     }
-
                 foreach ($cat as $item_category_id)
                     {
                         $replace = str_replace( "value=\"{$item_category_id['id']}\"", "value=\"{$item_category_id['id']}\" selected", $all_categories);
                         $all_categories=$replace;
                     }
-
                 echo $all_categories;
                 ?>
         </select>
@@ -66,7 +62,6 @@ $pages = $blog->getPagesList();
                     $selected = ($item['page_id']==$page['id'])?"selected":"";
                     echo "<option value=\"{$page['id']}\" $selected>{$page['menu_name']}</option>";
                 }
-
                 ?>
             </select>
         </div>

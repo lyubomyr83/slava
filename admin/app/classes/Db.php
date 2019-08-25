@@ -115,6 +115,7 @@ class Db extends Config
         else
         {
             $STH = self::$DBH->query($query);
+
         }
         return $STH;
     }

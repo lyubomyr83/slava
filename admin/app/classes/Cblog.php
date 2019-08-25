@@ -46,4 +46,10 @@ class Cblog extends Mblog
         $this->updateTags($arrayTags);
     }
 
+    public function prepareAddBlog($newone)
+    {
+        $newone['category'] = serialize($newone['category']);
+        $this->AddBlog($newone);
+    }
+
 }

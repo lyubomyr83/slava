@@ -11,7 +11,7 @@ $categories = $blog->getCategoryList();
 $pages = $blog->getPagesList();
 
 ?>
-<form method="post">
+<form method="post" >
     <input type="hidden" name="id" value="<?=$item['id']?>">
     <div class="row">
         <div class="col-md-2">Название статьи</div>
@@ -50,7 +50,8 @@ $pages = $blog->getPagesList();
     </div>
     <div class="row">
         <div class="col-md-2">Изображение</div>
-        <div class="col-md-4"><img src="../img/<?=$item['image']?>" width="200px" title="Это изображение отображается на сайте сейчас"><input type="file"></div>
+        <div class="col-md-4"><img src="../img/<?=$item['image']?>" width="200px" title="Это изображение отображается на сайте сейчас">
+            <input type="file"  name="image" accept="image/*,image/jpeg"></div>
     </div>
     <div class="row">
         <div class="col-md-2">Принадлежит странице</div>

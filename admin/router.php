@@ -53,7 +53,16 @@ else
                 require_once "views/VblogList.php";
                 break;
             case "blog_add":
-                require_once 'views/VblogAdd.php';
+                if(!$_POST)
+                {
+                    require_once 'views/VblogAdd.php';
+                }
+                else
+                {
+                    /*$blog->prepareUpdateTags($_POST['tags']);*/
+                    $_POST['author'] = $_SESSION['loged'];
+                    $blog->prepareAddBlog($_POST);
+                }
                 break;
             case "blog_edit":
                 if(!$_POST)
@@ -62,8 +71,8 @@ else
                 }
                 else
                 {
+                    /*$blog->prepareUpdateTags($_POST['tags']);*/
                     $blog->prepareEditBlogItem($_POST);
-                    $blog->prepareUpdateTags($_POST['tags']);
                 }
                 break;
             case "exit":
@@ -71,7 +80,6 @@ else
                 header('Refresh: 0; URL=index.php');
                 break;
         }
-
     }
 }
 

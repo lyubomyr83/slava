@@ -48,4 +48,9 @@ class Mblog
             }
     }
 
+    public function AddBlog($post)
+    {
+        Db::getInstance()->create("blog",$post, TRUE);
+    }
+
 }

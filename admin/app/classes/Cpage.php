@@ -32,4 +32,12 @@ class Cpage extends Mpage
     {
         $this->AddPage($post);
     }
+
+    public function getPageWithBlog()
+    {
+        $result = $this->preparePageWithBlog();
+        $page_name  = $result->fetchAll();
+        return $page_name;
+
+    }
 }

@@ -50,4 +50,11 @@ class Mpage
     {
         Db::getInstance()->delete("pages",$id);
     }
+
+    public function preparePageWithBlog()
+    {
+        $sql = "SELECT id, menu_name FROM pages WHERE blog = '1'";
+        $result = Db::getInstance()->read($sql);
+        return $result;
+    }
 }

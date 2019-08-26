@@ -5,9 +5,16 @@ namespace app\classes;
 
 class Mblog
 {
-    public function prepareBlog()
+    public function prepareBlog($post=null)
     {
         $sql = "SELECT * FROM blog";
+        if ($post)
+        {
+            foreach ($post as $id)
+            {
+                $sql .= " WHERE id='{$id}'";
+            }
+        }
         $result = Db::getInstance()->read($sql);
         return $result;
     }

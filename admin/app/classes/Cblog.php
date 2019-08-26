@@ -5,9 +5,9 @@ class Cblog extends Mblog
 {
 
 
-    public function getBlog()
+    public function getBlog($post=null)
     {
-        $result = $this->prepareBlog();
+        $result = $this->prepareBlog($post);
         $blog = $result->fetchAll();
         return $blog;
     }

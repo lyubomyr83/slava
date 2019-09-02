@@ -49,11 +49,28 @@ class Mblog
 
     public function updateTags($tags)
     {
+        $query = "SELECT tag FROM tags";
+        $all_tags = Db::getInstance()->read($query);
+        $tagsfromdb = $all_tags->fetchAll();
+
+        $tagsdb = '';
+        foreach ($tagsfromdb as $tags_db)
+        {
+            foreach ($tags_db as $tagdb)
+            {
+                $tagsdb .= $tagdb;
+                $tagsdb .= ",";
+            }
+        }
+        $tag_db = explode (",", $tagsdb);
         foreach ($tags as $tag)
+        {
+            if (!in_array($tag,$tag_db))
             {
                 $sql = "INSERT INTO tags (tag) VALUES ('{$tag}')";
                 Db::getInstance()->read($sql);
             }
+        }
     }
 
     public function AddBlog($post)

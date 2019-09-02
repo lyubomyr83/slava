@@ -71,7 +71,7 @@ else
                 }
                 else
                 {
-                    /*$blog->prepareUpdateTags($_POST['tags']);*/
+                    $blog->prepareUpdateTags($_POST['tags']);
                     $blog->prepareEditBlogItem($_POST);
                 }
                 break;

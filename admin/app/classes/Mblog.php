@@ -9,11 +9,12 @@ class Mblog
     {
         $sql = "SELECT * FROM blog";
         if ($post)
-        {
+        {   $sql .= " WHERE ";
             foreach ($post as $id)
             {
-                $sql .= " WHERE id='{$id}'";
+                $sql .= "page_id='{$id}' OR ";
             }
+            $sql = substr($sql,0,-3);
         }
         $result = Db::getInstance()->read($sql);
         return $result;

@@ -78,4 +78,11 @@ class Mblog
         Db::getInstance()->create("blog",$post, TRUE);
     }
 
+    public function prepareTags()
+    {
+        $sql = "SELECT * FROM tags";
+        $result = Db::getInstance()->read($sql);
+        return $result;
+    }
+
 }

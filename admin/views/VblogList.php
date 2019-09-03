@@ -1,5 +1,6 @@
 <?php
 $bloglist = $blog->getBlog($_POST['page_id']);
+$tags = $blog->getTags();
 ?>
 <div class="col-md-10">
     <div id='page' class="row pageListHeader">
@@ -47,6 +48,12 @@ $bloglist = $blog->getBlog($_POST['page_id']);
         foreach ($pages_names as $pages_name)
         {
             echo "<li><input type='checkbox' name='page_id[]' value='{$pages_name["id"]}'> {$pages_name['menu_name']}</li>";
+        }
+
+        echo "Тэги:";
+        foreach ($tags as $tag)
+        {
+            echo "<li><input type='checkbox' name='tag[]' value='{$tag["id"]}'> {$tag['tag']}</li>";
         }
         ?>
         <input type="submit" value="Применить">

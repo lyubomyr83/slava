@@ -52,4 +52,12 @@ class Cblog extends Mblog
         $this->AddBlog($newone);
     }
 
+    public function getTags()
+    {
+        $result = $this->prepareTags();
+        $tags  = $result->fetchAll();
+        return $tags;
+
+    }
+
 }

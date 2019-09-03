@@ -59,9 +59,14 @@ else
                 }
                 else
                 {
-                    /*$blog->prepareUpdateTags($_POST['tags']);*/
-                    $_POST['author'] = $_SESSION['loged'];
-                    $blog->prepareAddBlog($_POST);
+                    var_dump($_POST['tags' ]);
+                    $blog->prepareUpdateTags($_POST['tags']);
+                    if(!$_POST['tags'])
+                    {
+                        $_POST['author'] = $_SESSION['loged'];
+                        $blog->prepareAddBlog($_POST);
+                    }
+
                 }
                 break;
             case "blog_edit":

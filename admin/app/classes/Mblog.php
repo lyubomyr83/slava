@@ -5,17 +5,43 @@ namespace app\classes;
 
 class Mblog
 {
-    public function prepareBlog($post=null)
+    public function prepareBlog($page=null,$tags=null)
     {
         $sql = "SELECT * FROM blog";
-        if ($post)
-        {   $sql .= " WHERE ";
-            foreach ($post as $id)
+        if ($page)
+        {
+            $sql .= " WHERE ";
+            foreach ($page as $id)
             {
                 $sql .= "page_id='{$id}' OR ";
             }
             $sql = substr($sql,0,-3);
+
+            if ($tags)
+            {
+                $sql .= "AND (tags LIKE ";
+                foreach ($tags as $tag)
+                {
+                    $sql .= "'%{$tag}%' OR tags LIKE ";
+                }
+                $sql = substr($sql,0,-14);
+                $sql .=")";
+            }
         }
+        if (!$page)
+        {
+            if ($tags)
+            {
+                $sql .= " WHERE (tags LIKE ";
+                foreach ($tags as $tag)
+                {
+                    $sql .= "'%{$tag}%' OR tags LIKE ";
+                }
+                $sql = substr($sql,0,-14);
+                $sql .=")";
+            }
+        }
+
         $result = Db::getInstance()->read($sql);
         return $result;
     }

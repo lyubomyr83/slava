@@ -1,5 +1,5 @@
 <?php
-$bloglist = $blog->getBlog($_POST['page_id']);
+$bloglist = $blog->getBlog($_POST['page_id'],$_POST['tag']);
 $tags = $blog->getTags();
 ?>
 <div class="col-md-10">
@@ -53,7 +53,7 @@ $tags = $blog->getTags();
         echo "Тэги:";
         foreach ($tags as $tag)
         {
-            echo "<li><input type='checkbox' name='tag[]' value='{$tag["id"]}'> {$tag['tag']}</li>";
+            echo "<li><input type='checkbox' name='tag[]' value='{$tag["tag"]}'> {$tag['tag']}</li>";
         }
         ?>
         <input type="submit" value="Применить">

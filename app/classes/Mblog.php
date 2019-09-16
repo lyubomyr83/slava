@@ -18,7 +18,7 @@ class Mblog
             }
             $sql = substr($sql,0,-18);
             $sql .=")";
-        }
+    }
 
         $result = Db::getInstance()->read($sql);
         return $result;
